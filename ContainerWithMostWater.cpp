@@ -7,9 +7,11 @@ public:
         int maxArea = -1000000;
         int i = 0, j = height.size()-1;
         while(i<j) {
-            maxArea = max(maxArea, (j-i) * min(height[i], height[j]));
-            if(height[i]<height[j]) i++;
-            else j--;
+            maxArea = max(maxArea, (j-i) * min(height[i], height[j])); // Get the max area (x-axis distance between two bars * min. height)
+            if(height[i]<height[j]) 
+                i++;
+            else 
+                j--;
         }
         return maxArea;
     }
